@@ -17,8 +17,11 @@ else
 			$auteur = htmlspecialchars($_POST['auteur']);
 
 			$query = "INSERT INTO messages (auteur,message) VALUES ('$auteur', '$message')";
-			$requete = mysqli_query($bdd, $query);
+			mysqli_query($bdd, $query);
 			echo "message reçu (" .  date("l jS \of F Y h:i:s A") . ")";
+
+			
+
 			
 		}
 		else

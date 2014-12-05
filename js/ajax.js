@@ -26,9 +26,40 @@ $(document).ready(function()
 			}
 			
 		});
+
+		//function refresh()
+
+		//{
+			var div = document.getElementById("bloc").lastChild;
+			var lastId = 10;
+			
+
+			$.ajax(
+
+			{
+				url: "contentDisplay.php",
+				type: "POST",
+				data: "offset=" + lastId,
+				dataType: 'html',
+				success: function(content,status)
+				{
+					
+					
+					$("#bloc").append(content);
+
+
+				}
+
+			});
+
+		//}
+
+
+
 	});
 	
 		
+	
 	
 	
 	
