@@ -27,32 +27,7 @@ $(document).ready(function()
 			
 		});
 
-		//function refresh()
-
-		//{
-			var div = document.getElementById("bloc").lastChild;
-			var lastId = 10;
-			
-
-			$.ajax(
-
-			{
-				url: "contentDisplay.php",
-				type: "POST",
-				data: "offset=" + lastId,
-				dataType: 'html',
-				success: function(content,status)
-				{
-					
-					
-					$("#bloc").append(content);
-
-
-				}
-
-			});
-
-		//}
+		
 
 
 
@@ -60,10 +35,45 @@ $(document).ready(function()
 	
 		
 	
-	
-	
-	
+	function refresh()
+	{
+		var bloc = document.getElementById("bloc");
+		var lastId;
 
+		
+		if(bloc.children.length > 0)
+		{
+			
+			var div = bloc.lastChild;
+			lastId = div.id;
+		}
+		else
+		{
+			lastId = 1;
+		}
+		
+		console.log(lastId);
+
+		$.ajax(
+		{
+			url: "contentDisplay.php",
+			type: "POST",
+			data: "offset=" + lastId,
+			dataType: 'html',
+			success: function(content,status)
+			{
+				
+				$("#bloc").append(content);
+
+
+			}
+
+		});
+
+	}
+	
+	
+	var timeout = setInterval(function(){refresh();}, 3000);
 
 });
 
