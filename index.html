@@ -3,18 +3,23 @@
 	<head>
 		<title>Ajax - appli</title>
 		<meta charset="UTF-8" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/ajax.css">
 		
 	</head>
 	<body>
-		<div>
+		
+		<div id="bloc">
+		</div>
+		<div id="ecriremsg">
 			
-			<textarea id="message"></textarea>
+			<textarea id="message"  rows="3" cols="30" wrap="hard"  ></textarea>
 			<input type="texte" id="auteur">
 			<input type="submit" id="valid">
 			
 		</div>
-		<div id="bloc"></div>
+
+
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/ajax.js"></script>
 	</body>
