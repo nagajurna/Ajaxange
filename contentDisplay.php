@@ -12,7 +12,7 @@ else
 	if(isset($_POST['offset']))
 	{
 
-		$offset = intval($_POST['offset']);
+		$offset = htmlentities($_POST['offset']);
 		/*$result = mysqli_query($bdd,"SELECT COUNT(id) FROM messages");
 		$limit = mysqli_fetch_assoc($result);
 		echo $limit;*/
@@ -26,7 +26,7 @@ else
 			echo "<div id='";
 			echo $donnees['id'];
 			echo"' >";
-			echo "<p>" . $donnees['message'] . "</p><p>" . $donnees['auteur'] . "</p>";
+			echo "<p>" . html_entity_decode($donnees['message'],ENT_QUOTES) . "</p><h3>" . $donnees['auteur'] . "</h3>";
 			echo "</div>";
 		}
 

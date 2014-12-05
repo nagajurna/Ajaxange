@@ -62,8 +62,18 @@ $(document).ready(function()
 			dataType: 'html',
 			success: function(content,status)
 			{
-				
+				var pattern = new RegExp("( |')ange ","i")
+				var test = pattern.test(content);
+
+			
+
+				if(test)
+				{
+					console.log("ANGE !!!");
+				}
+
 				$("#bloc").append(content);
+
 
 
 			}
@@ -72,7 +82,7 @@ $(document).ready(function()
 
 	}
 	
-	
+	refresh();
 	var timeout = setInterval(function(){refresh();}, 3000);
 
 });
