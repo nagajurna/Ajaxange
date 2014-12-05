@@ -39,6 +39,8 @@ $(document).ready(function()
 	{
 		var bloc = document.getElementById("bloc");
 		var lastId;
+		var ange = document.getElementById("ange");
+		ange.style.display = "none";
 
 		
 		if(bloc.children.length > 0)
@@ -62,7 +64,7 @@ $(document).ready(function()
 			dataType: 'html',
 			success: function(content,status)
 			{
-				var pattern = new RegExp("( |')ange ","i")
+				var pattern = new RegExp("( |')ange ?","i")
 				var test = pattern.test(content);
 
 			
@@ -70,6 +72,7 @@ $(document).ready(function()
 				if(test)
 				{
 					console.log("ANGE !!!");
+					ange.style.display = "block";
 				}
 
 				$("#bloc").append(content);
